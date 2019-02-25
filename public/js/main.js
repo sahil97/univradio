@@ -3,7 +3,7 @@ $(document).ready(function(){
   var tb = document.getElementById('tb')
   var table = document.getElementById('table');
 
-  $.ajax({url: "http://localhost:3030/api/getshows", success: function(result){
+  $.ajax({url: `http://localhost:${process.env.PORT}/api/getshows`, success: function(result){
 
       for(var i=0;i<result.length;i++){
 
