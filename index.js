@@ -1,4 +1,5 @@
 const express = require('express');
+var path = require('path');
 var app = express();
 
 
@@ -21,7 +22,7 @@ var showSchema = new mongoose.Schema({
 var Show = mongoose.model('show', showSchema);
 // var Allshows;
 
-
+app.use('/public', express.static(path.join(__dirname, 'public')));
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -30,7 +31,7 @@ app.use(function(req, res, next) {
 
 
 app.get("/",(req,res)=>{
-  res.send("Sample data");
+  res.sendFile(path.join(__dirname + '/index.html'));
 });
 
 app.get('/api/getshows',(req,res)=>{
@@ -42,6 +43,8 @@ app.get('/api/getshows',(req,res)=>{
 })
 });
 
-app.listen('3030',()=>{
-  console.log("listening on 3030");
+const PORT = process.env.PORT||3030;
+
+app.listen(PORT,()=>{
+  console.log("listening on"+PORT);
 })
