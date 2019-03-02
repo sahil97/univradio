@@ -10,17 +10,49 @@
   <link rel="stylesheet" href="css/paper.min.css" class="css">
   <link rel="stylesheet" href="css/home.css" class="css">
 
-  <title>Home</title>
+  <title>Radio UP 16</title>
 </head>
 <body>
 
   <header>
       </header>
   <section class="container">
-    <h3 class="main-title center">Radio UBC 16</h3>
+    <h3 class="main-title center">Radio UP 16</h3>
     <p class="welcome-desc center">Here is the all the info that is on the database about some of the radio shows.</p>
     <p class="center small"> You can add your's as well.</p>
-  </div>
+    <button id='add_click'>Add your own new show</button>
+    <div class="add" id="add_dialog">
+      <div class="row">
+        <div class="form-group col-sm-12 col-md-5">
+          <label for="usr">Your Name:</label>
+          <input type="text" class="form-control" id="name">
+        </div>
+        <div class="form-group col-sm-12 col-md-5">
+          <label for="pwd">Description:</label>
+          <input type="text" class="form-control" id="desc">
+      </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-sm-12 col-md-5">
+          <label for="start">Time:</label>
+          <input type="time" id="time_input" name="appt"
+                 min="0:00" max="23:59" required>
+
+          </div>
+        <div class="form-group col-sm-12 col-md-5">
+          <label for="start">Date:</label>
+          <input type="date" id="date_input" name="trip-start"
+               value="2018-07-22"
+               min="2018-01-01" max="2019-12-31">
+
+        </div>
+      </div>
+      <button id="date_submit">Submit Date</button>
+
+    </div>
+
+    </div>
+    <h4>Here are all the shows:</h4>
     <table id="tb">
       <thead>
         <tr>
@@ -31,30 +63,6 @@
         </tr>
       </thead>
       <tbody id="table">
-        <!-- <tr>
-          <th scope="row">1</th>
-          <td><a href="#">Sahil Sharma</a></td>
-          <td>INT020</td>
-          <td>Shiv Nadar University</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td><a href="#">Taran Pal</a></td>
-          <td>INT016</td>
-          <td>IP University</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td><a href="#">Karan Bhayana</a></td>
-          <td>INT040</td>
-          <td>Amity Unversity</td>
-        </tr>
-        <tr>
-          <th scope="row">4</th>
-          <td><a href="#">Kalpriksh Bisht</a></td>
-          <td>INT010</td>
-          <td>Shiv Nadar University</td>
-        </tr> -->
       </tbody>
     </table>
 

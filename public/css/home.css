@@ -55,6 +55,12 @@ h1, p {
   margin-bottom: 15px;
 }
 
+.add{
+  display: none;
+  padding: 10px;
+  border: black solid 0.5px;
+}
+
 a{
   /* text-decoration: none; */
   background-image: none;
@@ -68,10 +74,14 @@ section{
   padding-bottom: 60px;
 }
 
-footer{
+/* footer{
   height: 30px;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
+} */
+
+.row{
+  margin: 0
 }

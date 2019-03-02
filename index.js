@@ -3,6 +3,10 @@ var path = require('path');
 var app = express();
 
 
+app.use(express.json());
+
+// app.use(express.bodyParser());
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://meet:meet1234@ds349175.mlab.com:49175/univradio');
 
@@ -39,8 +43,17 @@ app.get('/api/getshows',(req,res)=>{
     if (err) return console.error(err);
     console.log(shows);
     res.json(shows);
+  })
+});
 
-})
+app.post('/api/newshow',(req,res)=>{
+  console.log(req.body);
+  show = new Show ({host:req.body.host,desc:req.body.desc,day:req.body.day,time:req.body.time});
+  show.save((err,show)=>{
+    if (err) return console.error(err);
+
+  });
+  res.json("saved");
 });
 
 const PORT = process.env.PORT||3030;
