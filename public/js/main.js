@@ -74,4 +74,8 @@ $(document).ready(function(){
       }
     })
 
+
+    $('#show_events').on('click',(e)=>{
+      $('#tb').style.display = "block";
+    })
 });

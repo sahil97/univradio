@@ -1,0 +1,77 @@
+.body_title{
+  margin: 16px 16px;
+  padding-bottom: 8px;
+  border-bottom:3px solid black;
+  display:inline-block;
+}
+
+.jumbotron{
+  margin-bottom: 0;
+}
+
+.date{
+  background-color: red;
+  padding:15px;
+  color: #fff;
+
+}
+
+.day-card{
+  border:1px solid #aaa;
+  box-shadow: 10px 14px 5px -2px rgba(0,0,0,0.14);
+  margin-bottom: 15px;
+}
+
+.sp_date{
+  font-size: 6em;
+  text-align: center;
+  margin: 0;
+  font-family: 'Cinzel Decorative', cursive;
+  line-height:0.8em;
+}
+
+.sp_month{
+  font-size: 3em;
+  text-align: center;
+  margin: 0;
+  line-height: 0.8em;
+}
+
+.event_table{
+  padding: 20px;
+}
+
+.p_show{
+  margin: 10px;
+}
+
+.show_time{
+  font-family: 'Orbitron', sans-serif;
+}
+
+.show_name{
+  font-size: 2em;
+  line-height: 0.8em;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+
+.cb{
+  background-color: #000;
+}
+
+.info{
+  padding: 0;
+
+}
+
+footer{
+  background-color: black;
+}
+
+.footer-container{
+  color: white;
+  max-width: 468px;
+  text-align: center;
+  padding: 48px 0 24px 0;
+}

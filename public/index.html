@@ -18,9 +18,12 @@
       </header>
   <section class="container">
     <h3 class="main-title center">Radio UP 16</h3>
-    <p class="welcome-desc center">Here is the all the info that is on the database about some of the radio shows.</p>
-    <p class="center small"> You can add your's as well.</p>
-    <button id='add_click'>Add your own new show</button>
+    <h6 class="ml-auto"> - 88.7 Hz</h6>
+    <!-- <p class="welcome-desc center">Here is the all the info that is on the database about some of the radio shows.</p> -->
+    <!-- <p class="center small"> You can add your's as well.</p> -->
+    <button id='add_click'>Add your own show</button>
+    <button id="show_events">events</button>
+    <button id="schedule">Schedule</button>
     <div class="add" id="add_dialog">
       <div class="row">
         <div class="form-group col-sm-12 col-md-5">
@@ -57,7 +60,8 @@
       <thead>
         <tr>
           <th>Day</th>
-          <th>Time</th>
+          <th>Start Time</th>
+          <th>Duration</th>
           <th>Host</th>
           <th>Description</th>
         </tr>
@@ -71,7 +75,7 @@
   </section>
 
   <footer class="border fixed">
-    <p class="center">©2018 Copyright: SNU <a href="#"></a></p>
+    <!-- <p class="center">©2018 Copyright: SNU <a href="#"></a></p> -->
   </footer>
   <script
   src="https://code.jquery.com/jquery-3.3.1.js"
