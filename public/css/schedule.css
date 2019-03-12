@@ -1,0 +1,48 @@
+.p-2{
+  margin: 5px;
+  border: 0.5px solid black;
+  background-color: white;
+}
+
+body{
+  background-color: #333;
+}
+
+.jumbotron{
+  background-color: #333;
+  color: #eee;
+  border-radius: 0;
+  min-height: 180px;
+}
+
+.selected{
+  background-color: #444;
+  color: #fff;
+}
+
+td,th{
+  padding: 32px !important;
+  text-align: center;
+}
+
+.display-4{
+  font-size: 2.1em;
+  border-bottom: 1px solid #eee;
+  display: inline-block;
+  padding-bottom: 12px;
+}
+
+.schedule-container{
+  background-color: #333;
+  padding: 16px;
+}
+
+.table{
+  margin:0px;
+  padding: 10px;
+}
+
+.table-shows{
+  padding: 0;
+  min-height: 120px;
+}
