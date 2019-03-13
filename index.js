@@ -18,7 +18,8 @@ db.once('open', function() {
 
 var showSchema = new mongoose.Schema({
   day: String,
-  time:String,
+  st_time:String,
+  et_time:String,
   host:String,
   desc:String
 });
@@ -43,7 +44,7 @@ app.get('/api/getshows',(req,res)=>{
     if (err) return console.error(err);
     console.log(shows);
     res.json(shows);
-  })
+  }).limit(3)
 });
 
 app.post('/api/newshow',(req,res)=>{

@@ -1,29 +1,39 @@
 $(document).ready(function(){
 
   var tb = document.getElementById('tb')
-  var table = document.getElementById('table');
+  var table = document.getElementById('table1');
 
 
   $.ajax({url:"http://localhost:3030/api/getshows", success: function(result){
-
+    console.log(result);
       for(var i=0;i<result.length;i++){
 
         var day = result[i].day;
-        var time = result[i].time;
+        var st_time = result[i].st_time;
+        var et_time = result[i].et_time;
         var host = result[i].host;
         var desc = result[i].desc;
-        var data = [day,time,host,desc];
-        // console.log(data);
-
+        var time = st_time + "-" +et_time;
+        var data = [time,desc,host];
+        console.log(data);
+        classlist=['show_time','show_name','host_name']
         var row = document.createElement('tr');
-        for(var j=0; j<4;j++){
+        for(var j=0; j<3;j++){
           var cell = document.createElement('td');
           var cellText = document.createTextNode(data[j]);
           cell.appendChild(cellText);
+          cell.setAttribute('class',classlist[j]);
           row.appendChild(cell);
         }
+        row.setAttribute('class','p_show');
         table.appendChild(row);
-        tb.classList.add("table-striped");
+        // tb.classList.add("table-striped");
+
+        // <tr class="p_show">
+        //   <td class="show_time">14:00 - 16:00 </td>
+        //   <td class="show_name"> Hello World </td>
+        //   <td> ~ <span class="host_name">John Doe</span></td>
+        // </tr>
       }
         }
   });

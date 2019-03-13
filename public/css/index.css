@@ -7,6 +7,13 @@
 
 .jumbotron{
   margin-bottom: 0;
+  background-color: #666;
+  color: #fff;
+}
+
+body{
+  background-color: #333;
+  /* color: #fff; */
 }
 
 .date{
@@ -74,4 +81,8 @@ footer{
   max-width: 468px;
   text-align: center;
   padding: 48px 0 24px 0;
+}
+
+.body_title, .schedule{
+  color:#fff;
 }
