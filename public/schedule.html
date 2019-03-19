@@ -37,20 +37,78 @@
   <div class="jumbotron">
     <h3 class="display-4">Shows</h3>
   </div>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+  Add your own show
+  </button>
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add your own show</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="row">
+            <div class="form-group col-sm-12 col-md-5">
+              <label for="usr">Your Name:</label>
+              <input type="text" class="form-control" id="name">
+            </div>
+            <div class="form-group col-sm-12 col-md-5">
+              <label for="pwd">Description:</label>
+              <input type="text" class="form-control" id="desc">
+          </div>
+          </div>
+          <div class="row">
+            <div class="form-group col-sm-12 col-md-3">
+              <label for="st_time">Time:</label>
+              <input type="time" id="time_input" name="st_time"
+                     min="0:00" max="23:59" value="05:00">
+
+            </div>
+            <div class="form-group col-sm-12 col-md-3">
+              <label for="Duration">Duration(hours):</label>
+              <input type="number" id="duration" name="duration"
+                     min="0" max="23">
+
+            </div>
+            <div class="form-group col-sm-12 col-md-5">
+              <label for="start">Date:</label>
+              <input type="date" id="date_input" name="trip-start"
+                   value="2018-07-22"
+                   min="2018-01-01" max="2019-12-31">
+
+            </div>
+          </div>
+          <button class="btn btn-primary" id="show_submit">Submit show</button>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
   <!-- Section for Schedule -->
 
   <!-- Week days -->
   <div class="container schedule-container">
     <div class="d-flex flex-row bd-highlight mb-3">
-      <div class="p-2 bd-highlight selected">All</div>
-      <div class="p-2 bd-highlight">Mo</div>
-      <div class="p-2 bd-highlight">Tu</div>
-      <div class="p-2 bd-highlight">We</div>
-      <div class="p-2 bd-highlight">Th</div>
-      <div class="p-2 bd-highlight">Fr</div>
-      <div class="p-2 bd-highlight">Sa</div>
-      <div class="p-2 bd-highlight">Su</div>
+      <div class="weeklink p-2 bd-highlight"><a href="/schedule.html?day=All">All</a></div>
+      <div class="weeklink p-2 bd-highlight"><a href="/schedule.html?day=Mo">Mo</a></div>
+      <div class="weeklink p-2 bd-highlight"><a href="/schedule.html?day=Tu">Tu</a></div>
+      <div class="weeklink p-2 bd-highlight"><a href="/schedule.html?day=We">We</a></div>
+      <div class="weeklink p-2 bd-highlight"><a href="/schedule.html?day=Th">Th</a></div>
+      <div class="weeklink p-2 bd-highlight"><a href="/schedule.html?day=Fr">Fr</a></div>
+      <div class="weeklink p-2 bd-highlight"><a href="/schedule.html?day=Sa">Sa</a></div>
+      <div class="weeklink p-2 bd-highlight"><a href="/schedule.html?day=Su">Su</a></div>
     </div>
   </div>
 
@@ -60,37 +118,13 @@
       <table class="table table-dark">
         <thead>
           <tr>
+            <th scope="col">Date</th>
             <th scope="col">Time</th>
             <th scope="col">Show</th>
             <th scope="col">Host</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">10 AM - 12 AM</th>
-            <td>Hello World</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <th scope="row">10 AM - 12 AM</th>
-            <td>Hello World</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <th scope="row">10 AM - 12 AM</th>
-            <td>Hello World</td>
-            <td>Otto</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-          </tr>
+        <tbody id="table_body">
         </tbody>
       </table>
     </div>
@@ -119,6 +153,9 @@
   crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/bootstrap.min.js">
   </script>
+  <script type="text/javascript" src="js/moment.js">
+  </script>
+  <script type="text/javascript" src="js/schedule.js"></script>
 
 </body>
 </html>

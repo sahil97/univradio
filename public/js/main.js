@@ -39,17 +39,19 @@ $(document).ready(function(){
   });
 
 
-    $('#date_submit').on('click',(e)=>{
+    $('#show_submit').on('click',(e)=>{
       console.log($('#date_input').val(),$('#time_input').val());
       const host = $('#name').val();
       const desc = $('#desc').val();
       const day = $('#date_input').val();
       const time = $('#time_input').val();
+      const duration = $('#duration').val();
+      console.log(host,desc,day,time,duration);
       if(host && desc && day && time ){
-        let data = {host:host,desc:desc,time:time,day:day};
+        let data = {host:host,desc:desc,time:time,date:day,dur:duration};
           // data = JSON.stringify(data);
             console.log(data);
-            $.ajax({
+            // $.ajax({
               url:"http://localhost:3030/api/newshow",
               type:"POST",
               "headers": {

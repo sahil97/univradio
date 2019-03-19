@@ -1,7 +1,9 @@
 const express = require('express');
 var path = require('path');
 var app = express();
-
+var passport = require('passport');
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+const moment = require('moment');
 
 app.use(express.json());
 
@@ -18,8 +20,7 @@ db.once('open', function() {
 
 var showSchema = new mongoose.Schema({
   day: String,
-  st_time:String,
-  et_time:String,
+  duration:String,
   host:String,
   desc:String
 });
@@ -42,14 +43,16 @@ app.get("/",(req,res)=>{
 app.get('/api/getshows',(req,res)=>{
   Show.find(function (err, shows) {
     if (err) return console.error(err);
-    console.log(shows);
+    // console.log(shows);
     res.json(shows);
-  }).limit(3)
+
+  })
 });
 
 app.post('/api/newshow',(req,res)=>{
   console.log(req.body);
-  show = new Show ({host:req.body.host,desc:req.body.desc,day:req.body.day,time:req.body.time});
+  // console.log(re);
+  show = new Show ({host:req.body.host,desc:req.body.desc,day:req.body.date,duration:req.body.dur});
   show.save((err,show)=>{
     if (err) return console.error(err);
 
